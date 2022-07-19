@@ -6,13 +6,11 @@ WORKDIR /home/node/app
 COPY ./ ./
 
 RUN npm install 
-RUN npm run build
-RUN npm install -g http-server
 # App을 빌드하는 명령어. 여러개가 올 수 있다 
 
 
 
-CMD ["http-server", "-p", "3000", "./build"]
+CMD ["npm", "run", "start"]
 # 빌드된 App을 실행하는 명령어 하나만 올 수 있다 
 
 # 이미지 생성 명령어 (현 파일과 같은 디렉토리에서)
